@@ -1,0 +1,4 @@
+transcripts.tar.gz
+*-bundle.tar.gz
+output/
+__pycache__/
