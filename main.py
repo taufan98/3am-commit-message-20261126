@@ -37,6 +37,10 @@ def write_entry(line: str) -> str:
     with open(out_path, encoding="utf-8") as f:
         written = f.read()
     assert written == line + "\n", f"read-back mismatch in {out_path}"
+    assert len(written.rstrip("\n")) == len(line), (
+        f"read-back char count {len(written.rstrip(chr(10)))} "
+        f"!= {len(line)} in {out_path}"
+    )
     return out_path
 
 
